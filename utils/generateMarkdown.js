@@ -3,7 +3,9 @@ const markdown = {
     return `
   # ${data.title}
   ## Description \n \t ${data.Description}
-  ## Table of Contents \n \t {:toc}
+  ## Table of Contents \n \t
+  * TOC
+   {:toc}
   ## Installations \n \t ${data.Installations}
   ## Usage \n \t ${data.Usage}
   ## License\n \t ${data.License}
