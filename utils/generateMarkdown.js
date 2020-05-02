@@ -1,8 +1,17 @@
-function generateMarkdown(data) {
-  return `
-# ${data.title}
+const markdown = {
+  generateMarkdown(data) {
+    return `
+  # ${data.title}
+  ## Description \n \t ${data.Description}
+  ## Table of Contents \n \t {:toc}
+  ## Installations \n \t ${data.Installations}
+  ## Usage \n \t ${data.Usage}
+  ## License\n \t ${data.License}
+  ## Contributing \n \t ${data.Contributing}
+  ## Tests \n \t ${data.Tests}
+  
+  `
+  }
+};
 
-`;
-}
-
-module.exports = generateMarkdown;
+module.exports = markdown;
