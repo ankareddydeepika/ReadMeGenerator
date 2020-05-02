@@ -1,8 +1,6 @@
 var inquirer = require("inquirer");
-var axios = require("axios");
-var fs = require('fs');
+
 var api = require('./utils/api')
-var markdown = require('./utils/generateMarkdown')
 
 inquirer.prompt([
     {
@@ -22,7 +20,7 @@ inquirer.prompt([
 },
 {
     type: "input",
-    name: "Installation",
+    name: "Installations",
     message: "Write Steps for installations"
 },
 {
@@ -47,49 +45,13 @@ inquirer.prompt([
 }
 ]).then(function(data){
 
-    
-    const result = markdown.generateMarkdown(data)
-    writeToFile(result);
-  
-    const queryUrl = `https://api.github.com/users/${data.name}`;
-
-    axios.get(queryUrl).then(function(response){
-    
-            const emailId = response.data.email;
-            const profileimg = response.data.avatar_url;
-            const profilename = response.data.name;
-            writeToFile(emailId);
-            writeToFile(`![profilepic](${profileimg})`);
-            writeToFile(profilename);
-    
-        });
+    api.getUser(data);
 
 });
 
 
-function writeToFile(data) {
-
-    fs.appendFile("README.md", data + '\n', function(err){
-        if(err){
-            return console.log(err);
-        }
-
-        console.log("Success!")
-    });
-
-};
-    
 
 
 
 
-// const questions = [
 
-// ];
-
-
-// function init() {
-
-// }
-
-// init();
