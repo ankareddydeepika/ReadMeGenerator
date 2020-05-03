@@ -11,7 +11,7 @@ const api = {
     const emailId = response.data.email;
     const profileimg = response.data.avatar_url;
     const profilename = response.data.name;
-    writeFile.writeToFile(emailId);
+    //writeFile.writeToFile(emailId);
     writeFile.writeToFile(`# ${profilename}\n`);
     writeFile.writeToFile(`![profilepic](${profileimg})`)
 
