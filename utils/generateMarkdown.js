@@ -4,8 +4,11 @@ const markdown = {
   # ${data.title}
   ## Description \n \t ${data.Description}
   ## Table of Contents \n \t
-  * TOC
-   {:toc}
+    [Installations](#installations)
+    [Usage](#usage)
+    [License](#license)
+    [Contributing](#contributing)
+    [Tests](#tests)
   ## Installations \n \t ${data.Installations}
   ## Usage \n \t ${data.Usage}
   ## License\n \t ${data.License}

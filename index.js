@@ -31,19 +31,31 @@ inquirer.prompt([
 {
     type: "input",
     name: "License",
-    message: "Enter license details to access this application"
+    message: "Enter details about your License",
+
 },
 {
     type: "input",
     name: "Contributing",
-    message: "Enter the details od Developers who contributed to this project"
+    message: "Enter the details of Developers who contributed to this project"
 },
 {
     type: "input",
     name: "Tests",
     message: "Enter Tests that are performed for this application"
-}
+},
+{
+    type: "checkbox",
+    message: "Choose the badges you want to add",
+    name: "badges",
+    choices: [
+      "License",
+      "Maintained"
+    ]
+  }
 ]).then(function(data){
+
+    console.log(data);
 
     api.getUser(data);
 
