@@ -2,18 +2,18 @@ const markdown = {
   generateMarkdown(data) {
     return `
   # ${data.title}
-  ## Description \n \t ${data.Description}
-  ## Table of Contents \n \t
-    - [Installations](#installations)
-    - [Usage](#usage)
-    - [License](#license)
-    - [Contributing](#contributing)
-    - [Tests](#tests)
-  ## Installations \n \t ${data.Installations}
-  ## Usage \n \t ${data.Usage}
+  ## Description \n \n${data.Description}
+  ## Table of Contents \n \n
+  - [Installations](#installations)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  ## Installations \n \n ${data.Installations}
+  ## Usage \n \n ${data.Usage}
   ## License\n \t ${data.License}
-  ## Contributing \n \t ${data.Contributing}
-  ## Tests \n \t ${data.Tests}
+  ## Contributing \n \n ${data.Contributing}
+  ## Tests \n \n ${data.Tests}
   
   `
   }
